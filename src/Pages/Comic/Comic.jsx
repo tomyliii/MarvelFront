@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import "./Comic.css";
+import "./comic.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 export default function Comic(props) {
