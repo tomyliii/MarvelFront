@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import "./Personnage.css";
+import "./personnage.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import ComicCard from "../../Components/ComicCard/ComicCard";
