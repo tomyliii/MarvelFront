@@ -30,20 +30,20 @@ export default function Personnages(props) {
   return !isReady ? (
     <div>Loading, please wait...</div>
   ) : (
-    <main>
-      <h2>Personnages Marvel</h2>
-      <section>
-        {characteres.map((character) => {
-          return <CharacterCard key={character._id} character={character} />;
-        })}
-      </section>
-      <Pagination
-        selectedPage={selectedPage}
-        pages={pages}
-        setSelectedPage={setSelectedPage}
-      />
-
-      <div>JE suis la</div>
+    <main className="personnages-page">
+      <div className="wrapper ">
+        <h2>Personnages Marvel</h2>
+        <section>
+          {characteres.map((character) => {
+            return <CharacterCard key={character._id} character={character} />;
+          })}
+        </section>
+        <Pagination
+          selectedPage={selectedPage}
+          pages={pages}
+          setSelectedPage={setSelectedPage}
+        />
+      </div>
     </main>
   );
 }

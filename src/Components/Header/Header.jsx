@@ -11,25 +11,27 @@ export default function Header(props) {
   console.log(props.token);
   return (
     <header>
-      <div>
-        <section>
+      <div className="wrapper">
+        <section className="logo-section">
           <img src={Logo} alt="Logo MArvel" />
         </section>
         <section>
-          {props.token ? (
-            <button
-              onClick={() => {
-                Cookies.remove("userToken");
-                props.setToken("");
-                Cookies.remove("nickname");
-                props.setNickname("");
-              }}
-            >
-              Se déconnecter
-            </button>
-          ) : (
-            <Link to={"/login"}>Se connecter||S'inscrir</Link>
-          )}
+          <div className="button-container">
+            {props.token ? (
+              <button
+                onClick={() => {
+                  Cookies.remove("userToken");
+                  props.setToken("");
+                  Cookies.remove("nickname");
+                  props.setNickname("");
+                }}
+              >
+                Se déconnecter
+              </button>
+            ) : (
+              <Link to={"/login"}>Se connecter | S'inscrir</Link>
+            )}
+          </div>
           <form
             onSubmit={(event) => {
               event.preventDefault();
