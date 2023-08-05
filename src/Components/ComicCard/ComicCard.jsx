@@ -3,7 +3,7 @@ import "./comicCard.css";
 
 export default function ComicCard({ comic }) {
   return (
-    <Link to={`/comic/${comic._id}`}>
+    <Link to={`/comic/${comic._id}`} className="comic-card">
       <h3>{comic.title}</h3>
       <img
         src={`${comic.thumbnail.path}/standard_xlarge.${comic.thumbnail.extension}`}

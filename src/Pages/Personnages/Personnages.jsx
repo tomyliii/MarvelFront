@@ -11,6 +11,7 @@ export default function Personnages(props) {
   const [pages, setPages] = useState([]);
   const [selectedPage, setSelectedPage] = useState(1);
   const [limit, setLimit] = useState(100);
+
   try {
     useEffect(() => {
       (async () => {
@@ -43,6 +44,7 @@ export default function Personnages(props) {
           pages={pages}
           setSelectedPage={setSelectedPage}
         />
+        <div className="image-back"></div>
       </div>
     </main>
   );

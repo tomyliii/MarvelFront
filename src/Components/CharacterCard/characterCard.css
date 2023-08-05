@@ -1,0 +1,44 @@
+.perso-card {
+  width: calc((100%-120) / 5);
+  gap: 10px;
+  border: 2px solid rgba(255, 0, 0, 0);
+  transition: all 0.3s ease-out;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.perso-card > div {
+  position: relative;
+}
+.perso-card h3 {
+  position: absolute;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.662);
+  padding: 5px;
+  z-index: 1;
+  width: 100%;
+  bottom: 0;
+  transition: all 0.3s ease-in;
+}
+
+.perso-card img {
+  transition: all 0.3s ease-in;
+}
+.perso-card:hover img {
+  opacity: 0.8;
+}
+
+.perso-card:hover {
+  scale: 1.1;
+  box-shadow: 0 0 15px grey;
+  border: 2px solid red;
+}
+.perso-card:hover h3 {
+  background-color: rgb(255, 0, 0);
+}

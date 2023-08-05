@@ -30,18 +30,20 @@ export default function Comics(props) {
   return !isReady ? (
     <div>Loading, please wait...</div>
   ) : (
-    <main>
-      <h2>B.D</h2>
-      <section>
-        {comics.map((comic) => {
-          return <ComicCard key={comic._id} comic={comic} />;
-        })}
-      </section>
-      <Pagination
-        pages={pages}
-        setSelectedPage={setSelectedPage}
-        selectedPage={selectedPage}
-      />
+    <main className="comics-page">
+      <div className="wrapper">
+        <h2>B.D</h2>
+        <section>
+          {comics.map((comic) => {
+            return <ComicCard key={comic._id} comic={comic} />;
+          })}
+        </section>
+        <Pagination
+          pages={pages}
+          setSelectedPage={setSelectedPage}
+          selectedPage={selectedPage}
+        />
+      </div>
     </main>
   );
 }

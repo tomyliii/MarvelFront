@@ -1,0 +1,29 @@
+.comic-card {
+  width: calc((100% - 20px) / 2);
+  border: black solid 2px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  transition: all ease-out 0.3s;
+  overflow: hidden;
+}
+
+.comic-card:nth-child(even) {
+  flex-direction: row;
+}
+.comic-card h3 {
+  font-size: 20px;
+  font-weight: bold;
+  align-self: center;
+  text-align: center;
+  width: 100%;
+}
+
+.comic-card:hover {
+  background-color: red;
+  color: white;
+  scale: 1.04;
+  box-shadow: 0 0 15px black;
+}

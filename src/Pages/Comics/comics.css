@@ -1,0 +1,28 @@
+.comics-page section {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+@keyframes comics-page {
+  0% {
+    transform: translateY(1500px) skewY(50deg);
+  }
+  60% {
+    opacity: 0%;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.comics-page {
+  opacity: 0;
+  align-items: center;
+  animation-name: comics-page;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}

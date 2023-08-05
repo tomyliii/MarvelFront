@@ -1,0 +1,36 @@
+.personnages-page section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.image-back {
+  position: fixed;
+  top: 300px;
+}
+
+@keyframes affichage-page {
+  0% {
+    /* margin-left: -2000px; */
+
+    scale: 4;
+  }
+  20% {
+    opacity: 0;
+    transform: skewy(30deg) perspective(1000px) rotateX(75deg);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.personnages-page {
+  opacity: 0;
+  align-items: center;
+  animation-name: affichage-page;
+  animation-duration: 4s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}

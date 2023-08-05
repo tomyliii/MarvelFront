@@ -46,7 +46,7 @@ export default function Pagination({ pages, selectedPage, setSelectedPage }) {
   };
 
   return (
-    <div>
+    <div className="pagination-section">
       {pages.length !== 0 && (
         <div>
           {paginationDisplay(pages, selectedPage).map((page, index) => {
