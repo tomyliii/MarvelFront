@@ -15,16 +15,17 @@ export default function Comic(props) {
   useEffect(() => {
     (async () => {
       const response = await axios.get(`${props.server}/comic/${id}`);
-      const favorites = await axios.get(`${props.server}/favorites`, {
-        headers: { authorization: `Bearer ${props.token}` },
-      });
+      if (props.token) {
+        const favorites = await axios.get(`${props.server}/favorites`, {
+          headers: { authorization: `Bearer ${props.token}` },
+        });
 
-      if (
-        favorites.data.comics.find((comic) => comic._id === response.data._id)
-      ) {
-        setIseFavorit(true);
+        if (
+          favorites.data.comics.find((comic) => comic._id === response.data._id)
+        ) {
+          setIseFavorit(true);
+        }
       }
-
       setComic(response.data);
       setIsReady(true);
     })();

@@ -18,16 +18,18 @@ export default function Personnage(props) {
     try {
       (async () => {
         const response = await axios.get(`${props.server}/character/${id}`);
-        const favorites = await axios.get(`${props.server}/favorites`, {
-          headers: { authorization: `Bearer ${props.token}` },
-        });
+        if (props.token) {
+          const favorites = await axios.get(`${props.server}/favorites`, {
+            headers: { authorization: `Bearer ${props.token}` },
+          });
 
-        if (
-          favorites.data.characters.find(
-            (character) => character._id === response.data.character._id
-          )
-        ) {
-          setIseFavorit(true);
+          if (
+            favorites.data.characters.find(
+              (character) => character._id === response.data.character._id
+            )
+          ) {
+            setIseFavorit(true);
+          }
         }
         setCharacter(response.data.character);
         setComics(response.data.comics.comics);
