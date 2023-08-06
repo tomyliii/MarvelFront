@@ -27,7 +27,7 @@ header > .wrapper {
 .logo-section > img {
   width: 300px;
 }
-header > div > section:last-of-type {
+header > div > .menu-nav-large-sreen {
   display: flex;
   color: white;
   padding: 10px 0 0 0;
@@ -55,7 +55,7 @@ header nav ul {
 header li {
   display: flex;
   justify-content: center;
-  border-left: 3px solid red;
+
   height: 50px;
   width: 100%;
 }
@@ -99,67 +99,199 @@ header a,
 header button {
   font-weight: bold;
 }
-
-@keyframes header {
-  0% {
-    height: 111vh;
-    background-size: 1200px;
-    background-position: left 100px top -250px;
-    background-size: 2600px;
-  }
-  30% {
-    height: 110vh;
-  }
-  100% {
-    height: 250px;
-  }
+.little-screen-button-menu {
+  display: none;
 }
+@media (min-width: 901px) {
+  @keyframes header {
+    0% {
+      height: 111vh;
+      background-size: 1200px;
+      background-position: left 100px top -250px;
+      background-size: 2600px;
+    }
+    30% {
+      height: 110vh;
+    }
+    100% {
+      height: 250px;
+    }
+  }
 
-header {
-  align-items: center;
-  animation-name: header;
-  animation-duration: 4s;
-  animation-timing-function: ease-in-out;
-}
+  header {
+    align-items: center;
+    animation-name: header;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+  }
 
-@keyframes nav-apparition {
-  0% {
+  @keyframes nav-apparition {
+    0% {
+      opacity: 0;
+      width: 2000px;
+    }
+    70% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+      width: 100%;
+    }
+  }
+
+  header > div > section:last-of-type {
     opacity: 0;
-    width: 2000px;
+    animation-name: nav-apparition;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
   }
-  70% {
-    opacity: 1;
+
+  @keyframes logo-size {
+    0% {
+      width: 900px;
+      opacity: 0;
+    }
+
+    100% {
+      width: 300px;
+      opacity: 1;
+    }
   }
-  100% {
+
+  .logo-section > img {
     opacity: 1;
+    animation-name: logo-size;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+  }
+}
+
+@media (max-width: 1250px) {
+  header > .wrapper {
+    width: 95%;
+  }
+}
+
+@media (max-width: 900px) {
+  header {
+    height: 150px;
+    background-size: 200px;
+  }
+  .logo-section > img {
+    width: 150px;
+  }
+  .little-screen-button-menu {
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 40px;
+    font-size: 20px;
+  }
+  header > div .menu-nav-large-sreen {
+    display: none;
+  }
+
+  .little-screen-menu {
+    position: fixed;
+    background-image: url("../../assets/Images/spiderman.png");
+    background-repeat: no-repeat;
+    background-blend-mode: luminosity;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden;
+    padding: 20px;
+    gap: 30px;
+  }
+
+  .little-screen-menu form {
+    height: auto;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+  }
+  .little-screen-menu input[type="text"] {
+    height: 30px;
+  }
+  .little-screen-menu input[type="submit"] {
+    width: 100%;
+    height: 30px;
+    border: none;
+    width: 100%;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  .little-screen-menu .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+  }
+  .little-screen-menu nav ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
     width: 100%;
   }
-}
 
-header > div > section:last-of-type {
-  opacity: 0;
-  animation-name: nav-apparition;
-  animation-duration: 1.5s;
-  animation-timing-function: ease-out;
-  animation-delay: 3s;
-  animation-fill-mode: forwards;
-}
+  .little-screen-menu nav ul a {
+    display: flex;
 
-@keyframes logo-size {
-  0% {
-    width: 900px;
-    opacity: 0;
+    justify-content: center;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 10px 10px;
+  }
+  @keyframes headerSmall {
+    0% {
+      height: 111vh;
+
+      background-position: top 80px left -200px;
+      background-size: 1200px;
+    }
+    30% {
+      height: 110vh;
+    }
+    100% {
+      height: 150px;
+    }
   }
 
-  100% {
-    width: 300px;
+  header {
+    align-items: center;
+    animation-name: headerSmall;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: initial;
+  }
+
+  @keyframes logo-sizeSmall {
+    0% {
+      width: 900px;
+      opacity: 0;
+    }
+
+    100% {
+      width: 150px;
+      opacity: 1;
+    }
+  }
+
+  .logo-section > img {
     opacity: 1;
+    animation-name: logo-sizeSmall;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
   }
 }
-
-.logo-section > img {
-  opacity: 1;
-  animation-name: logo-size;
-  animation-duration: 4s;
-  animation-timing-function: ease-in-out;
+@media (max-width: 450px) {
 }

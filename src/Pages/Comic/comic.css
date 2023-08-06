@@ -27,3 +27,24 @@
 .comic-page > div > div > p {
   text-align: center;
 }
+
+@media (max-width: 1250px) {
+  .comic-page {
+    background-position: -300px 150px;
+  }
+}
+
+@media (max-width: 900px) {
+  .comic-page {
+    background-position: -450px 150px;
+  }
+}
+
+@media (max-width: 700px) {
+  .comic-page {
+    background-position: -700px 150px;
+  }
+}
+
+@media (max-width: 450px) {
+}

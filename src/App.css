@@ -57,3 +57,42 @@ a {
 .hidden {
   visibility: hidden;
 }
+@media (max-width: 1250px) {
+  .wrapper {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 900px) {
+  [class$="page"] .wrapper {
+    gap: 30px;
+
+    padding: 80px 20px 50px 20px;
+  }
+  [class$="page"] h2 {
+    margin-bottom: 30px;
+  }
+
+  [class$="page"] {
+    padding: 100px 20px 50px 20px;
+  }
+}
+
+@media (max-width: 700px) {
+  p,
+  a,
+  h1,
+  h3,
+  h4,
+  label,
+  button {
+    font-size: 12px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 450px) {
+}

@@ -1,5 +1,5 @@
 .perso-card {
-  width: calc((100%-120) / 5);
+  width: calc((100% - 120px) / 5);
   gap: 10px;
   border: 2px solid rgba(255, 0, 0, 0);
   transition: all 0.3s ease-out;
@@ -27,8 +27,13 @@
   transition: all 0.3s ease-in;
 }
 
+.perso-card > div {
+  width: 100%;
+}
+
 .perso-card img {
   transition: all 0.3s ease-in;
+  width: 100%;
 }
 .perso-card:hover img {
   opacity: 0.8;
@@ -41,4 +46,28 @@
 }
 .perso-card:hover h3 {
   background-color: rgb(255, 0, 0);
+}
+
+@media (max-width: 1250px) {
+  .perso-card {
+    width: calc((100% - 100px) / 4);
+  }
+}
+
+@media (max-width: 900px) {
+  .perso-card {
+    width: calc((100% - 80px) / 3);
+  }
+}
+
+@media (max-width: 700px) {
+  .perso-card {
+    width: calc((100% - 60px) / 2);
+  }
+}
+
+@media (max-width: 450px) {
+  .perso-card {
+    width: 90%;
+  }
 }
