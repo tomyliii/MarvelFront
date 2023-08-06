@@ -10,8 +10,7 @@ export default function Login(props) {
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location);
-  // const [redirection,setRedirection]=useState()
+
   const handleOnSubmit = async (event) => {
     event.preventDefault();
     try {

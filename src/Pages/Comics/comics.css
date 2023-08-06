@@ -38,22 +38,22 @@
   animation-fill-mode: forwards;
 } */
 @media (max-width: 1250px) {
-  header > .wrapper {
-    width: 95%;
+  .comics-page {
+    background-position: -200px 150px;
   }
 }
 @media (max-width: 900px) {
   .comics-page {
-    background-position: -300px 100px;
+    background-position: -500px 100px;
   }
 }
 @media (max-width: 700px) {
   .comics-page {
-    background-position: -550px 50px;
+    background-position: -650px 50px;
   }
 }
 @media (max-width: 450px) {
   .comics-page {
-    background-position: -630px 100px;
+    background-position: -800px 100px;
   }
 }

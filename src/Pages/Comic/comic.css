@@ -38,6 +38,9 @@
   .comic-page {
     background-position: -450px 150px;
   }
+  .comic-page > div > div img {
+    width: 100%;
+  }
 }
 
 @media (max-width: 700px) {

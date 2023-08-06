@@ -65,8 +65,6 @@ export default function Favorites(props) {
       </main>
     )
   ) : (
-    <Navigate to={"/login"} state={{ path: location.pathname }}>
-      LAAAAAAA
-    </Navigate>
+    <Navigate to={"/login"} state={{ path: location.pathname }}></Navigate>
   );
 }
