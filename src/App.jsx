@@ -15,8 +15,8 @@ import Cookies from "js-cookie";
 function App() {
   const [token, setToken] = useState(Cookies.get("userToken") || "");
   const [nickname, setNickname] = useState(Cookies.get("nickname") || "");
-  const server = "http://127.0.0.1:3000";
-  // const server = "https://site--marvelback--tzmxcvqjqbzq.code.run";
+  // const server = "http://127.0.0.1:3000";
+  const server = "https://site--marvelback--tzmxcvqjqbzq.code.run";
   return (
     <>
       <Router>
