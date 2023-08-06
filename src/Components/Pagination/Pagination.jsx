@@ -25,23 +25,28 @@ export default function Pagination({ pages, selectedPage, setSelectedPage }) {
     const maxPAgeShow = 9;
     let totalPage = value1.length;
     let arrayTodisplay = [];
-    if (value2 < 5) {
-      arrayTodisplay = value1.slice(0, 9);
-      arrayTodisplay.push("→", totalPage);
-      return arrayTodisplay;
-    }
-    if (value2 > totalPage - 5) {
-      arrayTodisplay = value1.slice(totalPage - 10);
-      arrayTodisplay.unshift(1, "←");
-      return arrayTodisplay;
-    }
-    if (value2 >= 5 && value2 <= totalPage - 5) {
-      const start = value2 - 4;
-      const end = value2 + 4;
-      arrayTodisplay = value1.slice(start, end);
-      arrayTodisplay.unshift(1, "←");
-      arrayTodisplay.push("→", totalPage);
-      return arrayTodisplay;
+
+    if (totalPage < 9) {
+      return value1;
+    } else {
+      if (value2 < 5) {
+        arrayTodisplay = value1.slice(0, 9);
+        arrayTodisplay.push("→", totalPage);
+        return arrayTodisplay;
+      }
+      if (value2 > totalPage - 5) {
+        arrayTodisplay = value1.slice(totalPage - 10);
+        arrayTodisplay.unshift(1, "←");
+        return arrayTodisplay;
+      }
+      if (value2 >= 5 && value2 <= totalPage - 5) {
+        const start = value2 - 4;
+        const end = value2 + 4;
+        arrayTodisplay = value1.slice(start, end);
+        arrayTodisplay.unshift(1, "←");
+        arrayTodisplay.push("→", totalPage);
+        return arrayTodisplay;
+      }
     }
   };
 

@@ -24,7 +24,6 @@ export default function DragAndDropSingUp(props) {
   const handleOnClickDeletPicutre = (event, value) => {
     event.stopPropagation();
 
-    console.log(arrayOfImages, value);
     for (let i = 0; i < arrayOfImages.length; i++) {
       if (arrayOfImages[i].name === value) {
         const arrayOfImagesCopy = [...arrayOfImages];
@@ -110,13 +109,11 @@ export default function DragAndDropSingUp(props) {
           <p>Glisse et dépose une photo ou clique pour la séléctionner.</p>
         )}
         <button type="button">
-          {" "}
           <FontAwesomeIcon icon={faPlus} />
           &nbsp;Clique
         </button>
       </div>
       <div className="pictures-status">
-        {" "}
         {acceptedFiles.length === 0 && rejectedItems.length === 0 ? (
           <p>
             Dépose une image pour personaliser ton avatar. <br />

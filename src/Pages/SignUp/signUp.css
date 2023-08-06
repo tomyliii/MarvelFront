@@ -1,0 +1,75 @@
+.singUp-page {
+  background-image: url("../../assets/Images/background7.jpg");
+  background-size: cover;
+  background-position: 0 80px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-blend-mode: hard-light;
+
+  background-color: rgba(70, 72, 128, 0.64);
+}
+
+.singUp-page > div {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.singUp-page > div > h2 {
+  align-self: flex-start;
+}
+.singUp-page > div form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+
+  padding: 50px;
+  width: 500px;
+  border-radius: 5px;
+}
+.singUp-page form > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+
+.singUp-page input {
+  width: 100%;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  color: black;
+  transition: all 0.3s ease-in-out;
+}
+.singUp-page input:focus {
+  background-color: red;
+  color: white;
+}
+
+.singUp-page .validation:hover {
+  background-color: red;
+  color: white;
+  border: none;
+}
+
+.singUp-page .validation {
+  border: none;
+  background-color: black;
+  color: white;
+  color: red;
+  font-weight: bold;
+}
+
+.singUp-page a {
+  color: red;
+  font-weight: bold;
+}
+
+.singUp-page a:hover {
+  text-decoration: underline;
+}

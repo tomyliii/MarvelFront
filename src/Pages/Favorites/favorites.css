@@ -1,0 +1,30 @@
+.favorites-page {
+  display: flex;
+  justify-content: center;
+  background-image: url("../../assets/Images/background11.jpg");
+  background-size: cover;
+  background-position: 0 100px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-blend-mode: hard-light;
+  background-color: rgba(70, 72, 128, 0.747);
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 50px !important;
+}
+.favorites-page section > h3 {
+  font-weight: bold;
+  font-size: 20px;
+  margin: 50px 0 30px 0;
+}
+.favorites-page > div .favorites-heros {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.favorites-page > div .favorites-comics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}

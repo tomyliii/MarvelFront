@@ -32,7 +32,7 @@ export default function Comics(props) {
   ) : (
     <main className="comics-page">
       <div className="wrapper">
-        <h2>B.D</h2>
+        <h2>Comics</h2>
         <section>
           {comics.map((comic) => {
             return <ComicCard key={comic._id} comic={comic} />;

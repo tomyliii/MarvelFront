@@ -4,26 +4,34 @@ import axios from "axios";
 import CharacterCard from "../../Components/CharacterCard/CharacterCard";
 import PagesCalculator from "../../assets/Tools/pagesCalculator";
 import Pagination from "../../Components/Pagination/Pagination";
+import { useLocation } from "react-router-dom";
 
 export default function Personnages(props) {
+  const location = useLocation();
+
   const [characteres, setCharacters] = useState([]);
   const [isReady, setIsReady] = useState("false");
   const [pages, setPages] = useState([]);
   const [selectedPage, setSelectedPage] = useState(1);
   const [limit, setLimit] = useState(100);
+  const [title, setTitle] = useState("");
+
+  if (title !== location.state?.name && location.state?.name) {
+    setTitle(location.state.name);
+  }
 
   try {
     useEffect(() => {
       (async () => {
         const response = await axios.get(
-          `${props.server}/characters?limit=${limit}&page=${selectedPage}`
+          `${props.server}/characters?limit=${limit}&page=${selectedPage}&title=${title}`
         );
-        console.log(response);
+
         setCharacters(response.data.results);
         PagesCalculator(response.data.count, limit, setPages);
         setIsReady(true);
       })();
-    }, [selectedPage]);
+    }, [selectedPage, title]);
   } catch (error) {
     console.log(error);
   }

@@ -1,9 +1,23 @@
+body {
+}
 .wrapper {
   width: 1200px;
   margin: 0 auto;
 }
 [class$="page"] {
-  padding: 300px;
+  padding-top: 200px;
+  padding-bottom: 150px;
+  width: 100%;
+  min-height: 100vh;
+}
+
+[class$="page"] .wrapper {
+  gap: 50px;
+  background-color: rgba(255, 255, 255, 0.886);
+  padding: 150px 20px 50px 20px;
+  border-radius: 10px;
+
+  /* box-shadow: 0 0 30px rgb(255, 255, 255); */
 }
 
 p,
@@ -12,6 +26,7 @@ h1,
 h2,
 h3,
 h4,
+label,
 button {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
@@ -28,4 +43,17 @@ a {
 
 [class$="page"] h2 {
   margin-bottom: 50px;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+.like {
+  color: red;
+}
+
+.hidden {
+  visibility: hidden;
 }

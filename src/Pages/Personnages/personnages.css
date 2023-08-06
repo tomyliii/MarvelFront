@@ -4,6 +4,17 @@
   justify-content: center;
   gap: 30px;
 }
+.personnages-page {
+  display: flex;
+  justify-content: center;
+  background-image: url("../../assets/Images/background5.jpg");
+  background-size: cover;
+  background-position: 0 100px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-blend-mode: hard-light;
+  background-color: rgba(70, 72, 128, 0.385);
+}
 
 .image-back {
   position: fixed;
@@ -12,13 +23,11 @@
 
 @keyframes affichage-page {
   0% {
-    /* margin-left: -2000px; */
-
+    opacity: 0;
     scale: 4;
+    transform: skewy(50deg) perspective(1000px) rotateY(90deg);
   }
   20% {
-    opacity: 0;
-    transform: skewy(30deg) perspective(1000px) rotateX(75deg);
   }
 
   100% {
@@ -26,11 +35,11 @@
   }
 }
 
-.personnages-page {
-  opacity: 0;
-  align-items: center;
+.personnages-page .wrapper {
+  opacity: 1;
+
   animation-name: affichage-page;
   animation-duration: 4s;
   animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
+  animation-fill-mode: inherit;
 }

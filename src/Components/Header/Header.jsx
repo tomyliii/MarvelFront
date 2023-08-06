@@ -4,11 +4,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 
 export default function Header(props) {
+  const navigate = useNavigate();
   const [search, setSearch] = useState("");
-  console.log(props.token);
+
+  const handleOnBlur = (event) => {
+    navigate("/", { state: { name: search } });
+  };
+  const handleOnSubmit = (event) => {
+    event.preventDefault();
+    navigate("/", { state: { name: search } });
+  };
   return (
     <header>
       <div className="wrapper">
@@ -34,7 +43,7 @@ export default function Header(props) {
           </div>
           <form
             onSubmit={(event) => {
-              event.preventDefault();
+              handleOnSubmit(event);
             }}
           >
             <input
@@ -43,8 +52,15 @@ export default function Header(props) {
               onChange={(event) => {
                 setSearch(event.target.value);
               }}
+              onBlur={(event) => {
+                handleOnBlur(event);
+              }}
+              onSubmit={(event) => {
+                handleOnSubmit(event);
+              }}
               placeholder="Recherche ton héro"
             />
+            <input type="submit" value="valider" className="hidden" />
           </form>
           <nav>
             <ul>

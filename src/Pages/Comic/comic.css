@@ -1,0 +1,29 @@
+.comic-page {
+  background-image: url("../../assets/Images/background13.jpg");
+  background-size: cover;
+  background-position: 0 100px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-blend-mode: hard-light;
+  background-color: rgba(70, 72, 128, 0.711);
+}
+
+.comic-page > div > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.comic-page h2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.comic-page > div > div img {
+  border-radius: 5px;
+  box-shadow: 0 0 15px black;
+}
+.comic-page > div > div > p {
+  text-align: center;
+}

@@ -8,6 +8,7 @@
   justify-content: space-between;
   transition: all ease-out 0.3s;
   overflow: hidden;
+  background-color: white;
 }
 
 .comic-card:nth-child(even) {

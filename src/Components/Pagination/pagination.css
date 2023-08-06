@@ -28,6 +28,5 @@
 .pagination-section .selected {
   background-color: black;
   color: white;
-  color: red;
   font-weight: bold;
 }
