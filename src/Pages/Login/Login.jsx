@@ -19,7 +19,7 @@ export default function Login(props) {
           mail,
           password,
         });
-        console.log(response.data);
+   
         Cookies.set("userToken", response.data.token, 1, { secure: true });
         Cookies.set("nickname", response.data.nickname, 1, {
           secure: true,
